@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8ed419b0-224b-4ba5-85ad-34301e23c76e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT*FROM V_MANTENIMIENTO_PRODUCTO]]>
+	</queryString>
+	<field name="idproducto" class="java.lang.Integer"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="costo" class="java.math.BigDecimal"/>
+	<field name="preciounit" class="java.math.BigDecimal"/>
+	<field name="stock" class="java.lang.Integer"/>
+	<field name="fecha_venci" class="java.lang.String"/>
+	<field name="marca" class="java.lang.String"/>
+	<field name="categoria" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="183" y="40" width="241" height="20" uuid="8f03a920-4de7-4475-a5df-c6ff1d7cc90a"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE GENERAL DE PRODUCTOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="0" width="100" height="20" uuid="3fa5d716-9aff-4577-8e9b-0d80d2b19d0a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="127" y="2" width="42" height="20" uuid="c60fefe6-14d4-4f77-9236-1ebeb9da3666"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[COSTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="201" y="2" width="43" height="20" uuid="439d8b85-856b-49a0-b49f-aab6741741a1"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRECIO V]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="269" y="2" width="55" height="20" uuid="c40ee851-973f-458f-b92b-c29306828a66"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[STOCK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="335" y="2" width="48" height="20" uuid="b15cff6c-df43-4978-8894-0b037edc5f31"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[MARCA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="424" y="2" width="100" height="20" uuid="8accff99-cf1f-4f63-b9d6-288841d95708"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA_VENCI]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="15" width="100" height="20" uuid="d99dc1a8-b4e1-4eba-a683-e30a4f1a1b1d"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="127" y="15" width="27" height="20" uuid="9949769d-c8b0-4c18-a24a-37406ab9b502"/>
+				<textFieldExpression><![CDATA[$F{costo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="201" y="15" width="43" height="20" uuid="e824ec20-d03c-4763-b96e-9767a97c9d1b"/>
+				<textFieldExpression><![CDATA[$F{preciounit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="269" y="15" width="30" height="20" uuid="0b35ff89-4405-4d0a-84f8-4bd88a86c1ee"/>
+				<textFieldExpression><![CDATA[$F{stock}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="335" y="12" width="77" height="20" uuid="41f890c3-a93b-49e2-81b3-b0a369702f8d"/>
+				<textFieldExpression><![CDATA[$F{marca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="424" y="15" width="78" height="20" uuid="7ee49731-09a5-46c5-8592-502b51b17663"/>
+				<textFieldExpression><![CDATA[$F{fecha_venci}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="266" y="33" width="100" height="20" uuid="b03a70fe-d075-4583-bfcb-1ec7dbafbdf9"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
